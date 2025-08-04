@@ -41,6 +41,18 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.route),
+        onPressed: () async {
+          final GoogleMapController controller = await _controller.future;
+          controller.animateCamera(
+            CameraUpdate.newCameraPosition(
+              CameraPosition(target: LatLng(34.0150, 71.9744), zoom: 13),
+            ),
+          );
+          setState(() {});
+        },
+      ),
       body: GoogleMap(
         markers: Set<Marker>.of(_markker),
         myLocationButtonEnabled: true,
