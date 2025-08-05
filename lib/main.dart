@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_google_map_integration/map_home.dart';
+import 'package:flutter_google_map_integration/View/map_home.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 void main() {
