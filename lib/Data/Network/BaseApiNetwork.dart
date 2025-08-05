@@ -1,4 +1,4 @@
-abstract class BaseApiNetwork {
-  Future<dynamic> _getgetApiService(String url);
-  Future<dynamic> _getPostApiService(String url, dynamic body);
+abstract class Baseapiservices {
+  Future<dynamic> getGetApiResponse(String url);
+  Future<dynamic> getPostApiResponse(String url, dynamic body);
 }
