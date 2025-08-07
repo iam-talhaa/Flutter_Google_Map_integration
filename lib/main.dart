@@ -2,8 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_google_map_integration/View/Covert_latLon.dart';
-import 'package:flutter_google_map_integration/View/map_home.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:flutter_google_map_integration/View/Current_location.dart';
 
 void main() {
   runApp(FlutterGoogleMap_());
@@ -19,6 +18,6 @@ class FlutterGoogleMap_ extends StatefulWidget {
 class _FlutterGoogleMap_State extends State<FlutterGoogleMap_> {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: CoversionToAdress());
+    return const MaterialApp(home: CurrentLocation_());
   }
 }
