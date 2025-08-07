@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "com.example.flutter_google_map_integration"
-    compileSdk = flutter.compileSdkVersion
+    compileSdk = 33
     ndkVersion = "27.0.12077973"
 
     compileOptions {
