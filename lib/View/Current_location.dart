@@ -53,6 +53,7 @@ class _CurrentLocation_State extends State<CurrentLocation_> {
             compassEnabled: true,
             markers: Set<Marker>.of(_markers),
             mapType: MapType.normal,
+            myLocationEnabled: true,
             onMapCreated: (GoogleMapController Controller) {
               _controller.complete(Controller);
             },
