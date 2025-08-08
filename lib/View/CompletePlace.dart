@@ -48,12 +48,10 @@ class _PlaceScreenState extends State<PlaceScreen> {
         '$baseURL?input=$input&key=$kPLACES_API_KEY&sessiontoken=$_sessionToken';
 
     var response = await http.get(Uri.parse(request));
-
+    print(response.body.toString());
     if (response.statusCode == 200) {
       setState(() {
         _listPlace = jsonDecode(response.body.toString())['predictions'];
-
-        print(_listPlace);
       });
     } else {
       throw FetechDataException("Error Occur During Fetching Api");
@@ -64,10 +62,15 @@ class _PlaceScreenState extends State<PlaceScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          TextFormField(
-            controller: _controller,
-            decoration: InputDecoration(hintText: "Search Place"),
+          SizedBox(height: 50),
+          Center(
+            child: TextFormField(
+              controller: _controller,
+              decoration: InputDecoration(hintText: "Search Place"),
+            ),
           ),
 
           Expanded(
