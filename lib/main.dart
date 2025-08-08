@@ -2,8 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_google_map_integration/View/CompletePlace.dart';
-import 'package:flutter_google_map_integration/View/Covert_latLon.dart';
-import 'package:flutter_google_map_integration/View/Current_location.dart';
 
 void main() {
   runApp(FlutterGoogleMap_());

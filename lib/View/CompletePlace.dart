@@ -30,7 +30,9 @@ class _PlaceScreenState extends State<PlaceScreen> {
 
   void onchange() {
     if (_sessionToken.isEmpty) {
-      _sessionToken = uuid.v4();
+      setState(() {
+        _sessionToken = uuid.v4();
+      });
     }
 
     getSuggestion(_sessionToken);
@@ -49,7 +51,9 @@ class _PlaceScreenState extends State<PlaceScreen> {
 
     if (response.statusCode == 200) {
       setState(() {
-        _listPlace = jsonDecode(response.body.toString());
+        _listPlace = jsonDecode(response.body.toString())['predictions'];
+
+        print(_listPlace);
       });
     } else {
       throw FetechDataException("Error Occur During Fetching Api");
@@ -61,7 +65,19 @@ class _PlaceScreenState extends State<PlaceScreen> {
     return Scaffold(
       body: Column(
         children: [
-          TextFormField(decoration: InputDecoration(hintText: "Search Place")),
+          TextFormField(
+            controller: _controller,
+            decoration: InputDecoration(hintText: "Search Place"),
+          ),
+
+          Expanded(
+            child: ListView.builder(
+              itemCount: _listPlace.length,
+              itemBuilder: (Context, index) {
+                return ListTile(title: Text(index.toString()));
+              },
+            ),
+          ),
         ],
       ),
     );
