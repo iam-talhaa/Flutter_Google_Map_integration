@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_google_map_integration/View/CompletePlace.dart';
+
 import 'package:flutter_google_map_integration/View/CustomMarker.dart';
 
 void main() {
